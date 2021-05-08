@@ -20,6 +20,7 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   void initState() {
     super.initState();
+    prefs.ultimaPagina = SettingsPage.routeName;
     _genero = prefs.genero;
     _colorSecundario = prefs.colorSecundario;
     _textController = new TextEditingController(text: prefs.nombreUsuario);
@@ -75,6 +76,7 @@ class _SettingsPageState extends State<SettingsPage> {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: TextField(
+                textCapitalization: TextCapitalization.sentences,
                 controller: _textController,
                 decoration: InputDecoration(
                   labelText: 'Nombre',
